@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Brawler:wght@400;700&family=Cambay:wght@400;700&family=Comfortaa:wght@300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+.loding {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .loding .loader-line {
+    width: 200px;
+    height: 3px;
+    position: relative;
+    overflow: hidden;
+    background-color: #ddd;
+    margin: 100px auto;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px; }
+  .loding .loader-line:before {
+    content: "";
+    position: absolute;
+    left: -50%;
+    height: 3px;
+    width: 40%;
+    background-color: #6563FF;
+    -webkit-animation: lineAnim 1s linear infinite;
+    -moz-animation: lineAnim 1s linear infinite;
+    animation: lineAnim 1s linear infinite;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px; }
+@keyframes lineAnim {
+  0% {
+    left: -40%; }
+  50% {
+    left: 20%;
+    width: 80%; }
+  100% {
+    left: 100%;
+    width: 100%; } }
+.wrap {
+  width: 100%;
+  height: 100vh;
+  background-color: #6563FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .wrap .wrap__titel {
+    font-family: 'Cambay';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 59px;
+    color: #FFFFFF;
+    margin-bottom: 10px; }
+  .wrap .wrap__box {
+    width: 550px;
+    height: 535px;
+    background: #F8F8F8;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 35px;
+    padding-right: 35px; }
+    .wrap .wrap__box .card__container {
+      width: 100%;
+      height: 80%; }
+    .wrap .wrap__box .button__container {
+      width: 100%;
+      height: 20%;
+      margin-top: 20px; }
+      .wrap .wrap__box .button__container .button {
+        width: 100%;
+        height: 85px;
+        border: 2px solid #6563FF;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px; }
+        .wrap .wrap__box .button__container .button .check {
+          width: 35px;
+          height: 35px;
+          border: 2px solid #6563FF;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer; }
+        .wrap .wrap__box .button__container .button .check__active {
+          box-shadow: 0px 0px 6px 2px #6563FF;
+          animation-name: check__active;
+          animation-duration: 2s;
+          animation-iteration-count: infinite; }
+@keyframes check__active {
+  0% {
+    box-shadow: 0px 0px 0px 0px #6563FF;
+    transform: rotate(0ded); }
+  50% {
+    box-shadow: 0px 0px 26px 2px #6563FF;
+    transform: rotate(180ded); }
+  100% {
+    box-shadow: 0px 0px 0px 0px #6563FF; } }
+        .wrap .wrap__box .button__container .button .check__ref {
+          width: 35px;
+          height: 35px;
+          border: 2px solid #6563FF;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer; }
+        .wrap .wrap__box .button__container .button .check__ref__active {
+          box-shadow: 0px 0px 6px 2px #6563FF;
+          animation-name: check__ref;
+          animation-duration: 2s;
+          animation-iteration-count: infinite; }
+@keyframes check__ref {
+  0% {
+    box-shadow: 0px 0px 0px 0px #6563FF;
+    transform: rotate(0ded); }
+  50% {
+    box-shadow: 0px 0px 26px 2px #6563FF;
+    transform: rotate(180ded); }
+  100% {
+    box-shadow: 0px 0px 0px 0px #6563FF; } }
+        .wrap .wrap__box .button__container .button .button__text {
+          font-family: 'Comfortaa';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 22px;
+          color: #000000;
+          margin-left: 20px; }
+        .wrap .wrap__box .button__container .button .robot {
+          width: 40px;
+          height: 40px;
+          margin-left: 10px; }
+        .wrap .wrap__box .button__container .button .line {
+          width: 1px;
+          height: 70%;
+          background-color: #6563FF;
+          margin-left: 45px; }
+        .wrap .wrap__box .button__container .button .flip {
+          font-family: 'Comfortaa';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 22px;
+          color: #000000;
+          margin-left: 30px; }
+          .wrap .wrap__box .button__container .button .flip #flip {
+            font-weight: 700; }
+
+.cards, .card, .view {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.cards {
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
+.cards .card {
+  width: 110px;
+  height: 110px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d; }
+
+.card.shake {
+  animation: shake 0.35s ease-in-out; }
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0); }
+  20% {
+    transform: translateX(-13px); }
+  40% {
+    transform: translateX(13px); }
+  60% {
+    transform: translateX(-8px); }
+  80% {
+    transform: translateX(8px); } }
+.card .view {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 7px;
+  background: #fff;
+  pointer-events: none;
+  backface-visibility: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s linear; }
+
+.card .front-view {
+  max-width: 100%;
+  background-size: cover; }
+
+.card .back-view img {
+  width: 30px; }
+
+.card .back-view {
+  transform: rotateY(-180deg); }
+
+.card.flip .back-view {
+  transform: rotateY(0); }
+
+.card.flip .front-view {
+  transform: rotateY(180deg); }
+
+@media screen and (max-width: 720px) {
+  .wrap {
+    height: auto;
+    padding-bottom: 30px;
+    padding-top: 30px; }
+    .wrap .wrap__titel {
+      font-size: 22px;
+      line-height: 34px;
+      margin-bottom: 10px; }
+    .wrap .wrap__box {
+      width: 450px;
+      height: 630px;
+      background: #F8F8F8;
+      border-radius: 10px;
+      padding-top: 20px;
+      padding-bottom: 40px;
+      padding-left: 35px;
+      padding-right: 35px; }
+      .wrap .wrap__box .button__container {
+        width: 100%;
+        height: 20%;
+        margin-top: 40px; }
+        .wrap .wrap__box .button__container .button {
+          width: 100%;
+          height: 85px;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          padding-left: 20px; }
+          .wrap .wrap__box .button__container .button .check {
+            width: 35px;
+            height: 35px; }
+          .wrap .wrap__box .button__container .button .check__ref {
+            width: 35px;
+            height: 35px; }
+          .wrap .wrap__box .button__container .button .button__text {
+            font-size: 20px;
+            line-height: 22px;
+            margin-left: 20px; }
+          .wrap .wrap__box .button__container .button .robot {
+            width: 40px;
+            height: 40px;
+            margin-left: 10px; }
+          .wrap .wrap__box .button__container .button .line {
+            width: 1px;
+            height: 70%;
+            background-color: #6563FF;
+            margin-left: 45px; }
+          .wrap .wrap__box .button__container .button .flip {
+            font-family: 'Comfortaa';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 22px;
+            color: #000000;
+            margin-left: 30px; }
+            .wrap .wrap__box .button__container .button .flip #flip {
+              font-weight: 700; }
+
+  .cards .card {
+    width: 110px;
+    height: 110px;
+    margin-top: 10px; }
+
+  .card .view {
+    border-radius: 7px; }
+
+  .card .back-view img {
+    width: 30px; } }
+@media screen and (max-width: 500px) {
+  body {
+    overflow: hidden; }
+
+  .wrap {
+    height: 100vh;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    overflow: hidden; }
+    .wrap .wrap__titel {
+      font-size: 20px;
+      line-height: 34px;
+      margin-bottom: 10px;
+      text-align: center; }
+    .wrap .wrap__box {
+      width: 330px;
+      height: 550px;
+      background: #F8F8F8;
+      border-radius: 10px;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 30px;
+      padding-right: 30px; }
+      .wrap .wrap__box .button__container {
+        width: 100%;
+        height: 20%;
+        margin-top: 20px; }
+        .wrap .wrap__box .button__container .button {
+          width: 100%;
+          height: 55px;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          padding-left: 15px; }
+          .wrap .wrap__box .button__container .button .check {
+            width: 25px;
+            height: 25px; }
+          .wrap .wrap__box .button__container .button .check__ref {
+            width: 25px;
+            height: 25px; }
+          .wrap .wrap__box .button__container .button .button__text {
+            font-size: 18px;
+            line-height: 22px;
+            margin-left: 15px; }
+          .wrap .wrap__box .button__container .button .robot {
+            width: 30px;
+            height: 30px;
+            margin-left: 5px; }
+          .wrap .wrap__box .button__container .button .line {
+            width: 1px;
+            height: 70%;
+            background-color: #6563FF;
+            margin-left: 15px; }
+          .wrap .wrap__box .button__container .button .flip {
+            font-family: 'Comfortaa';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 22px;
+            color: #000000;
+            margin-left: 10px; }
+            .wrap .wrap__box .button__container .button .flip #flip {
+              font-weight: 700; }
+
+  .cards .card {
+    width: 85px;
+    height: 85px;
+    margin-top: 0px; }
+
+  .card .view {
+    border-radius: 7px; }
+
+  .card .back-view img {
+    width: 30px; } }
+
+/*# sourceMappingURL=style.css.map */
